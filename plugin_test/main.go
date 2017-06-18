@@ -4,13 +4,13 @@ import "fmt"
 import "plugin"
 
 // #cgo CFLAGS: -I.
-// #cgo LDFLAGS: -L. ./lib/libcal.a
+// #cgo LDFLAGS: -L. ./lib/libcal.a ./lib/libadd.a
 // #include "./include/cal.h"
 import "C"
 
 func main() {
   	fmt.Println("StartMain")
-  	fmt.Println("C library ", C.add(10,20) )
+  	fmt.Println("C library ", C.cal(10,20) )
 
   	p, err := plugin.Open("./lib/helloplugin.so")
 	if err != nil {

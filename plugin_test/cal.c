@@ -1,7 +1,8 @@
 #include "cal.h"
+#include "add.h"
 
 
-int add(int a, int b)
+int cal(int a, int b)
 {
-	return a+b;
+	return add(a,b);
 }
